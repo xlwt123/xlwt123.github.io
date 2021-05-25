@@ -6,14 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: JavaScript | 林玮涛的博客</title>
+  <title>面试总结之JavaScript | 林玮涛的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="林玮涛的博客">
-<meta property="og:url" content="http://yoursite.com/tags/JavaScript/index.html">
+  <meta name="description" content="总结 JavaScript 相关面试知识。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试总结之JavaScript">
+<meta property="og:url" content="http://yoursite.com/2021/04/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93%E4%B9%8BJavaScript/index.html">
 <meta property="og:site_name" content="林玮涛的博客">
+<meta property="og:description" content="总结 JavaScript 相关面试知识。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-13T01:04:34.000Z">
+<meta property="article:modified_time" content="2021-05-25T08:07:03.190Z">
 <meta property="article:author" content="林玮涛">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="林玮涛的博客" type="application/atom+xml">
@@ -150,36 +156,347 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-面试总结之JavaScript" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93%E4%B9%8BJavaScript/" class="archive-article-date">
-  	<time datetime="2021-04-13T01:04:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93%E4%B9%8BJavaScript/">面试总结之JavaScript</a>
+    <h1 class="article-title" itemprop="name">
+      面试总结之JavaScript
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2021/04/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93%E4%B9%8BJavaScript/" class="archive-article-date">
+  	<time datetime="2021-04-13T01:04:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>总结 JavaScript 相关面试知识。</p>
+<a id="more"></a>
+
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ol>
+<li>js 基础数据类型</li>
+<li>js 有几种类型的值?</li>
+<li>堆和栈</li>
+<li>原型和原型链</li>
+<li>this</li>
+<li>|| 和 &amp;&amp;</li>
+<li>继承</li>
+<li>new</li>
+<li>模块加载方案区别</li>
+<li>实现 call, apply, bind</li>
+<li>闭包</li>
+<li>Polyfill</li>
+<li>Event Loops</li>
+<li>requestAnimationFrame</li>
+<li>webWorker</li>
+<li>Iterator</li>
+<li>Promise</li>
+<li>Generator</li>
+<li>async await</li>
+<li>Proxy 和 defineProperty</li>
+<li>Map 和 Set</li>
+<li>深浅拷贝</li>
+<li>垃圾回收</li>
+<li>函数柯里化</li>
+<li>设计模式</li>
+<li>待定</li>
+</ol>
+<h3 id="回答"><a href="#回答" class="headerlink" title="回答"></a>回答</h3><h4 id="js-基础数据类型"><a href="#js-基础数据类型" class="headerlink" title="js 基础数据类型"></a>js 基础数据类型</h4><p>在 JavaScript 中，一共有七种基础数据类型，分别是 undefined, null, number, boolean, string, symbol (ES6新增), bigint (ES10新增)。</p>
+<h4 id="js-有几种类型的值"><a href="#js-有几种类型的值" class="headerlink" title="js 有几种类型的值?"></a>js 有几种类型的值?</h4><p>在 JavaScript 中，有两种类型的值，分别是：基础数据类型和引用数据类型。</p>
+<p>基础数据类型是存储在栈中的简单数据端，占用空间小，大小固定。</p>
+<p>引用数据类型是存储在堆中的对象，占用空间大，大小不固定。引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。</p>
+<h4 id="堆和栈"><a href="#堆和栈" class="headerlink" title="堆和栈"></a>堆和栈</h4><p>堆和栈的概念存在于数据结构中和操作系统内存中。</p>
+<p>数据结构中栈是一种简单的结构。栈中数据存取的方式为先进后出。数据结构中堆是一个优先队列，是按优先级来进行排序的，优先级可以按照大小来规定。完全<br>二叉树是堆的一种实现方式。</p>
+<p>在操作系统中，内存被分为堆区和栈区。</p>
+<p>操作系统中堆和栈的区别和联系：</p>
+<ol>
+<li><p>申请方式：<br>栈中存储的数据是由系统（编译器）自动分配释放，堆中存储的数据是由程序员自己申请并指明大小并自己释放。</p>
+</li>
+<li><p>申请大小限制：<br>栈是向低地址拓展的数据结构（先进后出），是一块连续的内存区域，大小一般是 2M。<br>堆是向高地址拓展的数据结构，是不连续的内存区域，分配方式类似于数据结构中的链表。堆的大小受限于计算机系统中有效的虚拟内存。由此可见，堆获得的空间比较灵活，也比较大。</p>
+</li>
+<li><p>申请之后系统的响应：<br>栈：只要栈区的剩余空间大于申请空间，系统（编译器）就会提供内存空间。如果超出将报错误提示栈溢出。<br>堆：在操作系统中，将会维护一个记录空闲堆地址的链表。当系统收到申请时，将会查找这个链表，寻找到第一个大于申请大小的堆节点，然后将所需内存空间分配给程序，并计算此堆节点中剩余的大小并更新链表。</p>
+</li>
+<li><p>申请效率的比较：<br>栈由系统自动分配，速度较快。<br>堆分配内存，一般速度比较慢。</p>
+</li>
+</ol>
+<h4 id="原型和原型链"><a href="#原型和原型链" class="headerlink" title="原型和原型链"></a>原型和原型链</h4><p>略</p>
+<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><p>略</p>
+<h4 id="和-amp-amp"><a href="#和-amp-amp" class="headerlink" title="|| 和 &amp;&amp;"></a>|| 和 &amp;&amp;</h4><p>略</p>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>略</p>
+<h4 id="new"><a href="#new" class="headerlink" title="new"></a>new</h4><p>略</p>
+<h4 id="模块加载方案"><a href="#模块加载方案" class="headerlink" title="模块加载方案"></a>模块加载方案</h4><p>目前 js 中，比较成熟的有四种模块加载方案：CommonJs，AMD，CMD 和 ES6 import。</p>
+<p>AMD, CMD 比较老，略。</p>
+<ul>
+<li>CommonJs</li>
+</ul>
+<p>CommonJs 通过 module.exports 定义模块的输出接口，使用 require 来引入模块。这种模块加载方案是服务器端的解决方案，它是以同步的方式来引入模块的，因为在服务端文件都存储在本地磁盘，所以读取非常快，所以以同步的方式加载没有问题。但如果是在浏览器端，由于模块的加载是使用网络请求，因此使用异步加载的方式更加合适。</p>
+<p>CommonJs 输出的内容就是 exports 对象的浅拷贝，当这个模块运行结束后（运行时加载），输出的内容就确定了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// a.js</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> b = &#123; <span class="attr">num</span>: <span class="number">1</span> &#125;</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    a = <span class="number">2</span>;</span><br><span class="line">    b = &#123; <span class="attr">num</span>: <span class="number">2</span> &#125;;</span><br><span class="line">&#125;, <span class="number">200</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    a,</span><br><span class="line">    b,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="comment">// node main.js</span></span><br><span class="line"><span class="keyword">let</span> &#123;a, b&#125; = <span class="built_in">require</span>(<span class="string">'./a'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(b);  <span class="comment">// &#123; num: 1 &#125;</span></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);  <span class="comment">// 1</span></span><br><span class="line">    <span class="built_in">console</span>.log(b);  <span class="comment">// &#123; num: 1 &#125;</span></span><br><span class="line">&#125;, <span class="number">500</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>ES6 import</li>
+</ul>
+<p>ES6 import 使用 import 和 export 的形式来导入导出模块。ES6 的模块不是对象，JS 引擎对脚本静态分析的时候，遇到模块加载命令 import，就会生成一个只读引用。等到脚本真正执行时，再根据这个只读引用，到被加载的那个模块里面去取值。原始值变了，import 加载的值也会跟着变。因此，ES6 模块是动态引用，并且不会缓存值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// m1.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> foo = <span class="string">'bar'</span>;</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> foo = <span class="string">'baz'</span>, <span class="number">500</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// m2.js</span></span><br><span class="line"><span class="keyword">import</span> &#123;foo&#125; <span class="keyword">from</span> <span class="string">'./m1.js'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(foo);</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(foo), <span class="number">500</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 运行 m2 输出</span></span><br><span class="line">bar</span><br><span class="line">baz</span><br></pre></td></tr></table></figure>
+
+<p>由于 ES6 输入的模块变量，只是一个“符号连接”，所以这个变量是只读的，对它进行重新赋值会报错。相当于建立了一个 const 变量。</p>
+<p>最后，export 通过接口，输出的是同一个值。不同的脚本加载这个接口，得到的都是同样的实例。</p>
+<ul>
+<li><p>两者差异</p>
+<ul>
+<li>CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。</li>
+<li>CommonJS 模块是运行时加载，ES6 模块是编译时输出接口。</li>
+<li>CommonJS 模块的 require() 是同步加载模块，ES6 模块的 import 命令是异步加载，有一个独立的模块依赖的解析阶段。</li>
+</ul>
+</li>
+<li><p>循环依赖</p>
+</li>
+</ul>
+<p>对于循环依赖，CommonJS 的做法是，只输出已经执行的部分，还未执行的部分不会输出。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// a.js</span></span><br><span class="line">exports.done = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">require</span>(<span class="string">'./b'</span>); <span class="comment">// 引入 b 会去运行 bjs，此时执行的部分为 done = false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.js: b.done = %j'</span>, b.done);  <span class="comment">// true</span></span><br><span class="line">exports.done = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.js执行完毕'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// b.js</span></span><br><span class="line">exports.done = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">let</span> a = <span class="built_in">require</span>(<span class="string">'./a'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'b.js: a.done = %j'</span>, a.done);  <span class="comment">// false</span></span><br><span class="line">exports.done = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'b.js执行完毕'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="built_in">require</span>(<span class="string">'./a'</span>); <span class="comment">// 先引入 a 会去运行 ajs</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">require</span>(<span class="string">'./b'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'main.js: a.done = %j, b.done = %j'</span>, a.done, b.done); </span><br><span class="line"></span><br><span class="line"><span class="comment">// node main.js</span></span><br><span class="line">b.js: a.done = <span class="literal">false</span></span><br><span class="line">b.js执行完毕</span><br><span class="line">a.js: b.done = <span class="literal">true</span></span><br><span class="line">a.js执行完毕</span><br><span class="line">main.js: a.done = <span class="literal">true</span>, b.done = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>在 ES6 中，ESM 不需要关心是否存在循环依赖，只是生成一个指向被加载模块的引用，。需要开发者自己保证，真正取值的时候能够取到值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// a.mjs</span></span><br><span class="line"><span class="keyword">import</span> &#123;bar&#125; <span class="keyword">from</span> <span class="string">'./b'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.mjs'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(bar);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> foo = <span class="string">'foo'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// b.mjs</span></span><br><span class="line"><span class="keyword">import</span> &#123;foo&#125; <span class="keyword">from</span> <span class="string">'./a'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'b.mjs'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(foo);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> bar = <span class="string">'bar'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// node --experimental-modules a.mjs</span></span><br><span class="line">b.mjs</span><br><span class="line"><span class="built_in">ReferenceError</span>: foo is not defined</span><br></pre></td></tr></table></figure>
+
+<p>当执行 a.mjs 时，引擎发现它加载了 b.mjs，因此会优先执行 b.mjs，然后再执行 a.mjs。接着，执行 b.mjs 的时候，已知它从 a.mjs 输入了 foo 接口（静态解析），这时不会去执行 a.mjs，而是认为这个接口已经存在了，继续往下执行。执行到第三行 console.log(foo) 的时候，才发现这个接口根本没定义，因此报错。</p>
+<ul>
+<li>ES5 使用 import</li>
+</ul>
+<p>在 babel 中是使用 CommonJs 模拟实现 ESM，由于 export 对象可能不存在某个属性，因此并不会出现 XXX is not defined 的报错。</p>
+<h4 id="实现-call-apply-bind"><a href="#实现-call-apply-bind" class="headerlink" title="实现 call, apply, bind"></a>实现 call, apply, bind</h4><ul>
+<li>call，apply</li>
+</ul>
+<p>类似隐性丢失 this 的思路，在传入的上下文中，添加一个这个函数的临时属性，然后调用这个函数，由于存在隐性丢失，此时该函数的上下文就为传入的上下文了。</p>
+<p>如果不传入上下文，就默认绑定到全局对象中。<br>如果函数有返回值，则返回。若无，则返回 undefined。</p>
+<p>call 传入多个参数，使用 arguments 获取传入；apply 传入一个数组。</p>
+<ul>
+<li>bind</li>
+</ul>
+<p>bind 函数可以传入多个参数，第一个参数将作为运行时的上下文，其余参数将会在传递的实参前传入作为运行时的参数，最后返回一个新的函数。</p>
+<p>改变函数的 this 指向，可以通过 call 或者 apply 实现。</p>
+<h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><p>闭包是指那些能够访问自由变量的函数，所以从理论上说，所有的函数都是闭包。</p>
+<p>从实践意义上说，闭包函数需要满足两个要求：</p>
+<ul>
+<li>创建该函数的执行上下文已经被销毁，但该函数任然存在（返回一个函数）。</li>
+<li>在该函数中引用了自由变量</li>
+</ul>
+<p>作用场景：</p>
+<ul>
+<li>模仿块级作用域</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  data[i] = (<span class="function"><span class="keyword">function</span> (<span class="params">i</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">data[<span class="number">0</span>]();  <span class="comment">// 0</span></span><br><span class="line">data[<span class="number">1</span>]();  <span class="comment">// 1</span></span><br><span class="line">data[<span class="number">2</span>]();  <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>私有变量</li>
+</ul>
+<h4 id="Polyfill"><a href="#Polyfill" class="headerlink" title="Polyfill"></a>Polyfill</h4><p>待补充</p>
+<h4 id="Event-Loops"><a href="#Event-Loops" class="headerlink" title="Event Loops"></a>Event Loops</h4><ul>
+<li>调用栈</li>
+</ul>
+<p>在 JavaScript 中，当同步函数被调用时，会将该函数压入调用栈（执行上下文栈）中并开始执行。正在调用栈中执行的函数如果还调用了其他函数，新函数也会被压入栈中并执行。当函数执行完毕时，将会被清出调用栈，并继续执行当前执行环境下的剩余的代码。</p>
+<ul>
+<li>任务队列和微任务队列</li>
+</ul>
+<p>当从头执行一段程序、执行一个事件回调或一个 interval/timeout 被触发时，这些任务将会被添加到任务队列中。通过使用 promise 或 queueMicrotask 注册的回调事件将会被添加到微任务队列中。</p>
+<p>任务队列和微任务队列的区别：</p>
+<ol>
+<li><p>当执行来自任务队列中的任务时，在每一次新的事件循环开始迭代的时候运行时都会执行队列中的每个任务。在每次迭代开始之后加入到队列中的任务需要在下一次迭代开始之后才会被执行。</p>
+</li>
+<li><p>每次当一个任务退出且执行上下文为空的时候，微任务队列中的每一个微任务会依次被执行。不同的是它会等到微任务队列为空才会停止执行——即使中途有微任务加入。换句话说，微任务可以添加新的微任务到队列中，并在下一个任务开始执行之前且当前事件循环结束之前执行完所有的微任务。</p>
+</li>
+</ol>
+<p>Event Loops 事件循环负责收集回调事件、对任务进行排队以便在合适的时候执行回调。然后主线程执行所有处于等待中的 JavaScript 任务（宏任务），然后是微任务，然后在开始下一次循环之前执行一些必要的渲染和绘制操作。</p>
+<h4 id="requestAnimationFrame"><a href="#requestAnimationFrame" class="headerlink" title="requestAnimationFrame"></a>requestAnimationFrame</h4><p>window.requestAnimationFrame() 告诉浏览器——你希望执行一个动画，并且要求浏览器在下次重绘之前调用指定的回调函数更新动画。</p>
+<p>回调函数执行次数通常是每秒60次，但在大多数遵循 W3C 建议的浏览器中，回调函数执行次数通常与浏览器屏幕刷新次数相匹配。</p>
+<p>优点：当 requestAnimationFrame() 运行在后台标签页或者隐藏的 <code>&lt;iframe&gt;</code> 里时，requestAnimationFrame() 会被暂停调用以提升性能和电池寿命。</p>
+<p>用处：</p>
+<ul>
+<li>处理一些 css 无法实现的动画。</li>
+<li>监控页面卡顿：通过 requestAnimationFrame 来定时执行一些 JS 代码，如果浏览器卡顿，无法很好地保证渲染的频率，1s 中 frame 无法达到 60 帧，即可间接地反映浏览器的渲染帧率。</li>
+</ul>
+<h4 id="webWorker"><a href="#webWorker" class="headerlink" title="webWorker"></a>webWorker</h4><p>待补充</p>
+<h4 id="Iterator"><a href="#Iterator" class="headerlink" title="Iterator"></a>Iterator</h4><p>遍历器是在一种接口，为不同的数据结构提供统一的访问机制。任何数据结构只需要部署 Iterator 接口，就可以完成遍历操作（for…of）。</p>
+<p>Iterator 的遍历过程：</p>
+<ol>
+<li>创建一个指针对象，指向当前数据结构的起始位置。也就是说，遍历器对象本质上，就是一个指针对象。</li>
+<li>第一次调用指针的 next 方法，可以将指针指向数据结构的第一个成员。</li>
+<li>不断的调用 next 方法，直到指针指向数据结构的结束位置。</li>
+</ol>
+<p>每一次调用 next 方法，都会返回一个对象，包含数据结构中当前成员的信息：<br><code>{ value: ..., done: true | false }</code></p>
+<p>ES6 规定，默认的 Iterator 接口部署在数据结构的 Symbol.iterator 属性，或者说，一个数据结构只要具有 Symbol.iterator 属性，就可以认为是 “可遍历的” 。</p>
+<p>原生具备 Iterator 接口的数据结构如下:</p>
+<ul>
+<li>Array</li>
+<li>Map</li>
+<li>Set</li>
+<li>String</li>
+<li>TypedArray</li>
+<li>函数的 arguments 对象</li>
+<li>NodeList 对象</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数组的 Symbol.iterator 属性</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">let</span> iter = arr[<span class="built_in">Symbol</span>.iterator]();</span><br><span class="line"></span><br><span class="line">iter.next() <span class="comment">// &#123; value: 'a', done: false &#125;</span></span><br><span class="line">iter.next() <span class="comment">// &#123; value: 'b', done: false &#125;</span></span><br><span class="line">iter.next() <span class="comment">// &#123; value: 'c', done: false &#125;</span></span><br><span class="line">iter.next() <span class="comment">// &#123; value: undefined, done: true &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>一个对象如果要具备可被 for…of 循环调用的 Iterator 接口，就必须在 Symbol.iterator 的属性上部署遍历器生成方法（原型链上的对象具有该方法也可）。</p>
+<p>调用 Iterator 接口的场合：</p>
+<ul>
+<li>for…of</li>
+<li>解构赋值，对数组和 Set 结构进行解构赋值时，会默认调用 Symbol.iterator 方法。</li>
+<li>扩展运算符，只要某个数据结构部署了 Iterator 接口，就可以通过扩展运算符将这个数据结构转为数组。<code>[...&#39;abcd&#39;] // [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]</code></li>
+<li><code>yield*</code>，<code>yield*</code> 后面跟的是一个可遍历的结构，它会调用该结构的遍历器接口。</li>
+<li>由于数组的遍历会调用遍历器接口，所以任何接受数组作为参数的场合，其实都调用了遍历器接口。</li>
+</ul>
+<h4 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h4><p>Promise 是异步编程的一种解决方案，Promise 是一个对象，从这个对象中可以获取到异步操作的消息。Promise 有以下几个特点：</p>
+<ul>
+<li><p>对象的状态不受外界的影响。Promise 对象代表一个异步操作，有三种状态：pending（进行中）、fulfilled（已成功）和 rejected（已失败）。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。</p>
+</li>
+<li><p>一旦状态改变，就不能再变，任何时候都可以得到这个状态。Promise 对象的状态改变，只有两种可能：从 pending 变为 fulfilled 和从 pending 变为 rejected。</p>
+</li>
+</ul>
+<p>Promise 可以通过 then 方法为 Promise 示例添加状态改变时的回调函数，接受两个参数：onFulfilled 和 onRejected。同时 Promise 也可以通过 catch 方法添加发生错误时的回调函数。catch 方法注册的回调函数，不仅在 Promise 对象的状态变成 rejected 会被调用，在 then 方法注册的回调函数中，如果运行中抛出错误，也会被catch 方法捕获。</p>
+<p>Promise 的几个缺点：</p>
+<ul>
+<li><p>错误被吃掉：若没有注册错误回调函数，Promise 内部抛出的错误，并不会反映到外部。而正是因为错误被吃掉，Promise 链中的错误很容易被忽略掉，这也是为什么会一般推荐在 Promise 链的最后添加一个 catch 函数，因为对于一个没有错误处理函数的 Promise 链，任何错误都会在链中被传播下去，直到你注册了错误处理函数。</p>
+</li>
+<li><p>无法取消：一旦新建了 Promise 就会立即执行，无法中途取消。</p>
+</li>
+<li><p>无法得知 pending 状态：当处于 pending 状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。</p>
+</li>
+</ul>
+<p>用处：</p>
+<ul>
+<li><p>解决回调函数多次嵌套之后可读性和可维护性降低的问题。</p>
+</li>
+<li><p>解决同步和异步共同执行的问题：假设有个函数，在某种情况下会执行同步函数，另一种情况下会执行异步函数。使用 Promise 做处理，即使同步函数立即执行，then 中注册的回调函数任然是异步执行的。</p>
+</li>
+</ul>
+<h4 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h4><p>可以把 Generator 函数理解成一个状态机，封装了多个内部状态。执行 Generator 函数会返回一个遍历器对象，也就是说，Generator 函数还是一个遍历器对象生成函数，返回的遍历器对象，可以依次遍历 Generator 函数内部的每一个状态。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">helloWorldGenerator</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'hello'</span>;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'world'</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'ending'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hw = helloWorldGenerator();</span><br><span class="line"></span><br><span class="line">hw.next(); <span class="comment">// &#123; value: 'hello', done: false &#125;</span></span><br><span class="line"></span><br><span class="line">hw.next(); <span class="comment">// &#123; value: 'world', done: false &#125;</span></span><br><span class="line"></span><br><span class="line">hw.next(); <span class="comment">// &#123; value: 'ending', done: true &#125;</span></span><br><span class="line"></span><br><span class="line">hw.next(); <span class="comment">// &#123; value: undefined, done: true &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>运行 Generator 函数，返回一个遍历器对象。当调用遍历器对象的 next 方法时，会从第一个 yield 表达式开始，执行 yield 表达式，并返回一个包含 value 和 done 两个属性的对象。value 属性的值是 yield 表达式的值，done 属性的值表示遍历是否结束。</p>
+<p>Generator 函数可以不用 yield 表达式，这时就变成了一个单纯的暂缓执行函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'执行了！'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> generator = f();</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  generator.next()</span><br><span class="line">&#125;, <span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 两秒后输出 执行了！</span></span><br></pre></td></tr></table></figure>
+
+<p>yield 表达式本身没有返回值，或者说总是返回 undefined。但是 next 方法可以带一个参数，该参数就会被当做上一个 yield 表达式的返回值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">foo</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> y = <span class="number">2</span> * (<span class="keyword">yield</span> (x + <span class="number">1</span>));</span><br><span class="line">  <span class="keyword">var</span> z = <span class="keyword">yield</span> (y / <span class="number">3</span>);</span><br><span class="line">  <span class="keyword">return</span> (x + y + z);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = foo(<span class="number">5</span>);</span><br><span class="line">a.next() <span class="comment">// &#123; value:6, done:false &#125;</span></span><br><span class="line">a.next() <span class="comment">// &#123; value:NaN, done:false &#125;</span></span><br><span class="line">a.next() <span class="comment">// &#123; value:NaN, done:true &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = foo(<span class="number">5</span>);</span><br><span class="line">b.next() <span class="comment">// &#123; value:6, done:false &#125;</span></span><br><span class="line">b.next(<span class="number">12</span>) <span class="comment">// &#123; value:8, done:false &#125;</span></span><br><span class="line">b.next(<span class="number">13</span>) <span class="comment">// &#123; value:42, done:true &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>由于 yield 表达式返回的是 undefined，第二次运行 next 时未带参数，所以 y 的值等于 <code>2 * undefined</code> 为 NaN。通过向 next 方法传值，y 的值就等于 <code>12 * 2</code> 为 24 了（传入 12 为上一个 yield 命令的值）。</p>
+<p>由于运行 Generator 函数，返回的是一个遍历器对象。所以 for…of 循环可以自动遍历 Generator 函数运行时生成的 Iterator 对象，且此时不再需要调用 next 方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Generator for...of 实现斐波那契数列</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fibonacci</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> [prev, curr] = [<span class="number">0</span>, <span class="number">1</span>];</span><br><span class="line">  <span class="keyword">for</span> (;;) &#123;</span><br><span class="line">    <span class="keyword">yield</span> curr;</span><br><span class="line">    [prev, curr] = [curr, prev + curr];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> n <span class="keyword">of</span> fibonacci()) &#123;</span><br><span class="line">  <span class="keyword">if</span> (n &gt; <span class="number">1000</span>) <span class="keyword">break</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="async-await"><a href="#async-await" class="headerlink" title="async await"></a>async await</h4><p>async，await 实际上就是 Generator 函数的语法糖。async 函数就是将 Generator 函数的星号（*）替换成 async，将 yield 替换成 await，仅此而已。</p>
+<p>async函数对 Generator 函数的改进，体现在以下四点。</p>
+<ul>
+<li><p>内置执行器。Generator 函数的执行必须靠执行器，所以才有了 co 模块，而 async 函数自带执行器。</p>
+</li>
+<li><p>更好的语义。async 和 await，比起星号和 yield，语义更清楚了。async 表示函数里有异步操作，await 表示紧跟在后面的表达式需要等待结果。</p>
+</li>
+<li><p>更广的适用性。co 模块约定，yield 命令后面只能是 Thunk 函数或 Promise 对象，而 async 函数的 await 命令后面，可以是 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时会自动转成立即 resolved 的 Promise 对象）。</p>
+</li>
+<li><p>返回值是 Promise。async 函数的返回值是 Promise 对象，这比 Generator 函数的返回值是 Iterator 对象方便多了。你可以用 then 方法指定下一步的操作。</p>
+</li>
+</ul>
+<h4 id="Proxy-和-defineProperty"><a href="#Proxy-和-defineProperty" class="headerlink" title="Proxy 和 defineProperty"></a>Proxy 和 defineProperty</h4><p>Proxy 和 defineProperty 的区别：</p>
+<ul>
+<li>Proxy 的代理是在对象级别的，defineProperty 是代理到对象的属性上。所以 Proxy 的代理并不需要遍历对象的所有属性。</li>
+<li>defineProperty 是对对象自身做修改，Proxy 只是在对象上增加一层代理，不修改原对象。</li>
+<li>defineProperty 无法监听数组的变化，Proxy 可以。</li>
+<li>defineProperty 监听手段单一，只能监听 set 和 get 操作，Proxy 总共有 13 种监听方法。</li>
+</ul>
+<p>Proxy 支持的代理操作：</p>
+<ul>
+<li><code>get(target, propKey, receiver)</code> 拦截对象属性的读取</li>
+<li><code>set(target, propKey, value, receiver)</code> 拦截对象属性的设置</li>
+<li><code>has(target, propKey)</code> 拦截 propKey in proxy 的操作，返回一个布尔值</li>
+<li><code>deleteProperty(target, propKey)</code> 拦截 delete proxy[propKey]的操作，返回一个布尔值</li>
+<li><code>ownKeys(target)</code> 拦截 Object.getOwnPropertyNames(proxy)、Object.getOwnPropertySymbols(proxy)、Object.keys(proxy)、for…in 循环，返回一个数组。该方法返回目标对象所有自身的属性的属性名，而 Object.keys() 的返回结果仅包括目标对象自身的可遍历属性。</li>
+<li><code>getOwnPropertyDescriptor(target, propKey)</code></li>
+<li><code>defineProperty(target, propKey, propDesc)</code></li>
+<li><code>preventExtensions(target)</code></li>
+<li><code>getPrototypeOf(target)</code></li>
+<li><code>isExtensible(target)</code></li>
+<li><code>setPrototypeOf(target, proto)</code></li>
+<li><code>apply(target, object, args)</code> 拦截 Proxy 实例作为函数调用的操作，比如 proxy(…args)、proxy.call(object, …args)、proxy.apply(…)。</li>
+<li><code>construct(target, args)</code> 拦截 Proxy 实例作为构造函数调用的操作，比如 new proxy(…args)。</li>
+</ul>
+<p>在 Proxy 代理的情况下，目标对象内部的 this 关键字会指向 Proxy 代理。</p>
+<h4 id="Map-和-Set"><a href="#Map-和-Set" class="headerlink" title="Map 和 Set"></a>Map 和 Set</h4><p>Set 的特性：</p>
+<ul>
+<li>Set 类似于数组，但是成员的值都是唯一的，没有重复的值。</li>
+<li>Set 加入值时，不会发生类型转换，类似于 <code>===</code>。所以添加两个空对象是可以都添加进去的。但是不能添加两个 NaN。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数组去重</span></span><br><span class="line">[...new <span class="built_in">Set</span>(array)]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 字符串去重</span></span><br><span class="line">[...new <span class="built_in">Set</span>(<span class="string">'abbbccd'</span>)].join(<span class="string">''</span>)  <span class="comment">// abcd</span></span><br></pre></td></tr></table></figure>
+
+<p>WeakSet 的特性：</p>
+<ul>
+<li>WeakSet 和 Set 类似，也是不重复值的集合。但是 WeakSet 中的成员只能是对象，不能是其他类型的值。</li>
+<li>WeakSet 中的值都是弱引用，垃圾回收机制不考虑 WeakSet 对该对象的引用，如果在其他地方没有引用到这个对象，则会自动回收该对象占用的内存。</li>
+<li>WeakSet 不可遍历，成员会随时消失。</li>
+</ul>
+<p>Map 的特性：</p>
+<ul>
+<li>Map 类似于对象，也是键值对的集合。但是 key 的值不限于字符串，可以是任何类型的值。</li>
+<li>Map 的键值与内存地址绑定，只要内存地址不一样，就视为两个键。对于简单类型的值，只要两个值严格相等，就视为同一个键。同样，两个 NaN 视为同一个键。</li>
+</ul>
+<p>WeakMap 的特性：</p>
+<ul>
+<li>只接受对象作为 key 值（null 除外），不接受其他类型的值作为 key 值。</li>
+<li>WeakMap key 指向的对象，不计入垃圾回收机制（弱引用）。</li>
+<li>WeakMap 不可遍历，无法清空。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> weakMap = <span class="keyword">new</span> <span class="built_in">WeakMap</span>();</span><br><span class="line"></span><br><span class="line">weakMap.set(</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'logo'</span>),</span><br><span class="line">  &#123;<span class="attr">timesClicked</span>: <span class="number">0</span>&#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'logo'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> logoData = weakMap.get(<span class="built_in">document</span>.getElementById(<span class="string">'logo'</span>));</span><br><span class="line">  logoData.timesClicked++;</span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当 dom 被删除时，weakMap 中的状态就会被清空，防止内存泄漏。</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="深浅拷贝"><a href="#深浅拷贝" class="headerlink" title="深浅拷贝"></a>深浅拷贝</h4><ul>
+<li>浅拷贝</li>
+</ul>
+<p>如果是数组，可以利用数组的一些方法比如：slice，concat，Array.from，[…arr] 返回一个新数组的特性来实现拷贝。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'old'</span>, <span class="number">1</span>, &#123;<span class="attr">old</span>: <span class="string">'old'</span>&#125;, [<span class="string">'old'</span>]];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> new_arr1 = arr.concat();</span><br><span class="line"><span class="keyword">let</span> new_arr2 = arr.slice();</span><br><span class="line"></span><br><span class="line">arr[<span class="number">0</span>] = <span class="string">'new'</span>;</span><br><span class="line">arr[<span class="number">2</span>].old = <span class="string">'new'</span>;</span><br><span class="line">arr[<span class="number">3</span>][<span class="number">0</span>] = <span class="string">'new'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr);  <span class="comment">// ['new', 1, &#123;old: 'new'&#125;, ['new']]</span></span><br><span class="line"><span class="built_in">console</span>.log(new_arr1);  <span class="comment">// ['old', 1, &#123;old: 'new'&#125;, ['new']]</span></span><br><span class="line"><span class="built_in">console</span>.log(new_arr2);  <span class="comment">// ['old', 1, &#123;old: 'new'&#125;, ['new']]</span></span><br></pre></td></tr></table></figure>
+
+<p>如果是对象，可以使用对象的 Object.assign 方法实现浅拷贝。</p>
+<p>当然，也可以手动遍历所有 key 和 value，再放入一个新对象中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> shallowCopy = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 只拷贝对象</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> obj !== <span class="string">'object'</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="comment">// 根据obj的类型判断是新建一个数组还是对象</span></span><br><span class="line">    <span class="keyword">let</span> newObj = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">    <span class="comment">// 遍历obj，并且判断是obj的属性才拷贝</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">        <span class="keyword">if</span> (obj.hasOwnProperty(key)) &#123;</span><br><span class="line">            newObj[key] = obj[key];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newObj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>深拷贝</li>
+</ul>
+<p>JSON.parse(JSON.stringify(obj)) 不能拷贝正则表达式类型/函数类型/循环使用对象/undefined。</p>
+<p>遍历递归：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> deepCopy = <span class="function">(<span class="params">obj</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> obj !== <span class="string">'object'</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">let</span> newObj = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">        <span class="keyword">if</span> (obj.hasOwnProperty(key)) &#123;</span><br><span class="line">            newObj[key] = <span class="keyword">typeof</span> obj[key] === <span class="string">'object'</span> ? deepCopy(obj[key]) : obj[key];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newObj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="函数柯里化"><a href="#函数柯里化" class="headerlink" title="函数柯里化"></a>函数柯里化</h4>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -195,113 +512,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/04/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93%E4%B9%8BJavaScript/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/03/10/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93%E4%B9%8Bcss/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">面试总结之css</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/08/%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1hash%E4%B8%8Ehistory%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  	<time datetime="2020-01-08T12:00:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-08</time>
-</a>
-        </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/08/%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1hash%E4%B8%8Ehistory%E5%8C%BA%E5%88%AB/">前端路由hash与history区别</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">路由</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/08/%E4%BD%BF%E7%94%A8JavaScript%E5%AE%9E%E7%8E%B0LRC%E6%AD%8C%E8%AF%8D%E8%A7%A3%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2020-01-08T01:53:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/08/%E4%BD%BF%E7%94%A8JavaScript%E5%AE%9E%E7%8E%B0LRC%E6%AD%8C%E8%AF%8D%E8%A7%A3%E6%9E%90/">使用JavaScript实现LRC歌词解析</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -324,9 +634,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
